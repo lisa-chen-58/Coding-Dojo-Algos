@@ -30,9 +30,3 @@ function noSpace(string) {
 
 testString = noSpace(" Ha  ppy S t. Patrick 's D a y! ");
 console.log(testString);
-
-
-
-
-    }
-}
