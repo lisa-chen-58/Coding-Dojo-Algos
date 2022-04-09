@@ -4,15 +4,23 @@
 // [1,4,2,3,5]
 
 function minToFront(arr) {
-    var min = arr[0];
-    newArray = [];
     for (let i = 1; i < arr.length; i++) {
-        if (arr[i] < min) {
-            min = arr[i];
-        }
-    }
-    for (let i = 1; i < arr.length; i++){
+        min = arr[0];
         
+        
+        
+        // var min = arr[0];
+        // var newArray = [];
+        // if (arr[i] < min) {
+        //     min = arr[i];
+        //     newArray[0] = min;
+        // }
+        // else {
+        // newArray.push(arr[i]);
+        // }
     }
-
+    return newArray
 }
+
+var Solution = minToFront([4, 2, 1, 3, 5]);
+console.log("Solution is ", Solution);
