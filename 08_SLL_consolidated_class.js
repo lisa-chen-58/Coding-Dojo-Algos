@@ -13,70 +13,38 @@ class LinkedList {
     }
 
 // Add Front
-// Write a method that accepts a value and create a new node, assign it to the list head, and return a pointer to the new head node.
-
-    // accepts a value
     addFront(value) {
-        // create a new node
         let new_node = new Node(value);
-
-        // assign it to the list head / assign the head to be the next node to the new node
         new_node.next = this.head
-
-        // returns a pointer to the new head node / assign the new_node to be the new head of the list
         this.head = new_node
-
         return this.head; //OR return "this"
     }
 
 
 // Remove Front
-// Write a method to remove the head node and return the new list head node. If the list is empty, return null.
-
     removeFront() {
-        // If the list is empty, place the new node as the head 
-        if (this.head == null) { //if list is empty do nothing
+        if (this.head == null) {
             return this.head;
         }
-        // creates variable to hold node we're removing
         var removedNode = this.head;
-
-        // assigns the new head of the list to be the next node
         this.head = removedNode.next;
-
-        // clear the removedNode from head to null (removed from the list)
         removedNode.next = null;
         return this.head;
     }
-    // Front
-    // Write a method to return the value (not the node) at the head of the list. If the list is empty, return null.
-
+    // Front - returns value at head of list
     front() {
-        // if (this.head == null) {
-        //     return null;
-        // } else {
-        //     return this.head.value;
-        // }
-
-        //Ternary:
         return this.head ? this.head.value : null;
     }
     contains(value) {
-        if (this.head == null) {
-            return null;
-        }
-        else {
-            let runner = this.head;
-            let valueExists = false;
-            while (runner !== null) {
-                if (runner == value) {
-                    valueExists = true;
-                    console.log(valueExists);
-                }
-                runner = runner.next
+        var runner = this.head.data;
+        console.log(this.head.data);
+        while(runner) {
+            if(runner === value) {
+                return true;
             }
-            return valueExists;
+            runner = runner.next;
         }
+        return false;
     }
 }
 
@@ -85,7 +53,7 @@ var newLL = new LinkedList();
 newLL.addFront(10);
 newLL.addFront(5);
 newLL.addFront(3);
-newLL.removeFront();
+// newLL.removeFront();
 console.log(newLL);
 console.log(newLL.head.next);
-console.log(newLL.contains(5));
+console.log(newLL.contains(3));
